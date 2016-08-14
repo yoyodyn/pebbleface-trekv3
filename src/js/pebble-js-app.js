@@ -85,21 +85,27 @@ if (options === null) options = {
 				"startday_status" : "false",
 				"steps_status" : "false"};
 
-function getWeatherFromLatLong(latitude, longitude) {
+function getWeatherFromLatLong(latitude, longitude) 
+{
   var response;
   var location_name = "";
   var url = "http://maps.googleapis.com/maps/api/geocode/json?latlng=" + latitude + "," + longitude;
   var req = new XMLHttpRequest();
   req.open('GET', url, true);
-  req.onload = function(e) {
-    if (req.readyState == 4) {
-      if (req.status == 200) {
+  req.onload = function(e) 
+  {
+    if (req.readyState == 4) 
+    {
+      if (req.status == 200) 
+      {
         response = JSON.parse(req.responseText);
-        if (response) {
+        if (response) 
+        {
           location_name = response.results[0].formatted_address;
           getWeatherFromLocation(location_name);
         }
-      } else {
+      } else 
+      {
         console.log("Error LatLong");
       }
     }
@@ -107,7 +113,8 @@ function getWeatherFromLatLong(latitude, longitude) {
   req.send(null);
 }
 
-function getWeatherFromLocation(location_name) {
+function getWeatherFromLocation(location_name) 
+{
   var response;
   var woeid = -1;
 
@@ -115,16 +122,21 @@ function getWeatherFromLocation(location_name) {
   var url = "http://query.yahooapis.com/v1/public/yql?q=" + query + "&format=json";
   var req = new XMLHttpRequest();
   req.open('GET', url, true);
-  req.onload = function(e) {
-    if (req.readyState == 4) {
-      if (req.status == 200) {
+  req.onload = function(e) 
+  {
+    if (req.readyState == 4) 
+    {
+      if (req.status == 200) 
+      {
         // console.log(req.responseText);
         response = JSON.parse(req.responseText);
-        if (response) {
+        if (response) 
+        {
           woeid = response.query.results.place.woeid;
           getWeatherFromWoeid(woeid);
         }
-      } else {
+      } else 
+      {
         console.log("Error Location");
       }
     }
@@ -178,18 +190,20 @@ function getWeatherFromWoeid(woeid) {
   req.send(null);
 }
 
-function updateWeather() {
-  if (options['use_gps'] == "true") {
-//    navigator.geolocation.getCurrentPosition(locationSuccess,
+function updateWeather() 
+{
+  if (options['use_gps'] == "true") 
+  {
     window.navigator.geolocation.getCurrentPosition(locationSuccess,
                                                     locationError,
                                                     locationOptions);
-  } else {
+  } 
+  else 
+  {
     getWeatherFromLocation(options["location"]);
   }
 }
 
-//var locationOptions = { "timeout": 30000, "maximumAge": 60000 };
 var locationOptions = { "timeout": 15000, "maximumAge": 60000 };
 
 function locationSuccess(pos) {
@@ -223,18 +237,18 @@ Pebble.addEventListener('showConfiguration', function(e) {
     '&startday_status=' + encodeURIComponent(options['startday_status']) +
     '&steps_status=' + encodeURIComponent(options['steps_status']);
 
-  //console.log('showing configuration at uri: ' + uri);
-
   Pebble.openURL(uri);
 });
 
 Pebble.addEventListener('webviewclosed', function(e) {
-  if (e.response) {
+  if (e.response) 
+  {
     options = JSON.parse(decodeURIComponent(e.response));
     localStorage.setItem('options', JSON.stringify(options));
-    //console.log('storing options: ' + JSON.stringify(options));
     updateWeather();
-  } else {
+  } 
+  else 
+  {
     console.log('no options received');
   }
 });
@@ -243,12 +257,7 @@ Pebble.addEventListener("ready", function(e) {
   //console.log("connect!" + e.ready);
   updateWeather();
   setInterval(function() {
-    //console.log("timer fired");
     updateWeather();
-//  }, 60000); // 1 minutes
-//  }, 300000); // 5 minutes
-//    }, 600000); // 10 minutes
-//  }, 1200000); // 20 minutes
   }, 1800000); // 30 minutes
   console.log(e.type);
 });

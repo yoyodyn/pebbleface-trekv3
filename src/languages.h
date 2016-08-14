@@ -1,15 +1,10 @@
-
-
 #pragma once
-
 
 // Forward declarations
 void update_time();
 
-
 // This works around the inability to use the current GRect macro for constants
 #define ConstantGRect(x, y, w, h) {{(x), (y)}, {(w), (h)}}
-
 
 // Day line information
 static const char *day_lines[] = { "Mo  Tu  We  Th  Fr  Sa  Su"
@@ -23,9 +18,9 @@ static const char *day_lines[] = { "Mo  Tu  We  Th  Fr  Sa  Su"
                                  , "Må  Ti  On  To  Fr  Lö  Sö"
                                  , "Ma  Ti  Ke  To  Pe  La  Su"
                                  , "Ma  Ti  On  To  Fr  Lø  Sø"
-								 , "Pt  Sa  Ça  Pe  Cu  Ct  Pz"
-								 , "Dl  Dt  Dc  Dj  Dv  Ds  Dg"
-								 , "Po  Ut  St  Št  Pi  So  Ne"
+                								 , "Pt  Sa  Ça  Pe  Cu  Ct  Pz"
+								                 , "Dl  Dt  Dc  Dj  Dv  Ds  Dg"
+								                 , "Po  Ut  St  Št  Pi  So  Ne"
                                  };
 
 static const char *day_lines2[] = { "Su  Mo  Tu  We  Th  Fr  Sa"
@@ -39,9 +34,9 @@ static const char *day_lines2[] = { "Su  Mo  Tu  We  Th  Fr  Sa"
                                  , "Sö  Må  Ti  On  To  Fr  Lö"
                                  , "Su  Ma  Ti  Ke  To  Pe  La"
                                  , "Sø  Ma  Ti  On  To  Fr  Lø"
-								 , "Pz  Pt  Sa  Ça  Pe  Cu  Ct"
-								 , "Dg  Dl  Dt  Dc  Dj  Dv  Ds"
-								 , "Ne  Po  Ut  St  Št  Pi  So"
+                								 , "Pz  Pt  Sa  Ça  Pe  Cu  Ct"
+								                 , "Dg  Dl  Dt  Dc  Dj  Dv  Ds"
+								                 , "Ne  Po  Ut  St  Št  Pi  So"
                                  };
 
 // GRect for day highlights
@@ -64,7 +59,6 @@ static const GRect highlight_rect[][7] = { { ConstantGRect( 35, 107, 18, 20 ) , 
                                          , { ConstantGRect( 33, 107, 18, 20 ) , ConstantGRect( 51, 107, 18, 20 ) , ConstantGRect( 66, 107, 18, 20 ) , ConstantGRect( 82, 107, 18, 20 ) , ConstantGRect( 97, 107, 18, 20 ) , ConstantGRect( 113, 107, 18, 20 ) , ConstantGRect( 132, 107, 18, 20 ) }
                                          };
 
-
 static const GRect highlight_rect2[][7] = { { ConstantGRect( 35, 107, 18, 20 ) , ConstantGRect( 53, 107, 18, 20 ) , ConstantGRect( 73, 107, 18, 20 ) , ConstantGRect( 93, 107, 18, 20 ) , ConstantGRect( 112, 107, 18, 20 ) , ConstantGRect( 130, 107, 18, 20 ) , ConstantGRect( 147, 107, 18, 20 ) }
                                          , { ConstantGRect( 32, 107, 18, 20 ) , ConstantGRect( 51, 107, 18, 20 ) , ConstantGRect( 71, 107, 18, 20 ) , ConstantGRect( 89, 107, 18, 20 ) , ConstantGRect( 110, 107, 18, 20 ) , ConstantGRect( 128, 107, 18, 20 ) , ConstantGRect( 144, 107, 18, 20 ) }
                                          , { ConstantGRect( 35, 107, 18, 20 ) , ConstantGRect( 54, 107, 18, 20 ) , ConstantGRect( 73, 107, 18, 20 ) , ConstantGRect( 89, 107, 18, 20 ) , ConstantGRect( 108, 107, 18, 20 ) , ConstantGRect( 124, 107, 18, 20 ) , ConstantGRect( 142, 107, 18, 20 ) }
@@ -80,7 +74,6 @@ static const GRect highlight_rect2[][7] = { { ConstantGRect( 35, 107, 18, 20 ) ,
                                          , { ConstantGRect( 31, 107, 18, 20 ) , ConstantGRect( 49, 107, 18, 20 ) , ConstantGRect( 68, 107, 18, 20 ) , ConstantGRect( 86, 107, 18, 20 ) , ConstantGRect( 102, 107, 18, 20 ) , ConstantGRect( 120, 107, 18, 20 ) , ConstantGRect( 139, 107, 18, 20 ) }
                                          , { ConstantGRect( 34, 107, 18, 20 ) , ConstantGRect( 53, 107, 18, 20 ) , ConstantGRect( 70, 107, 18, 20 ) , ConstantGRect( 86, 107, 18, 20 ) , ConstantGRect( 101, 107, 18, 20 ) , ConstantGRect( 116, 107, 18, 20 ) , ConstantGRect( 132, 107, 18, 20 ) }
                                          };
-
 #else
 static const GRect highlight_rect[][7] = { { ConstantGRect( 16, 98, 18, 20 ) , ConstantGRect( 35, 98, 18, 20 ) , ConstantGRect( 55, 98, 18, 20 ) , ConstantGRect( 74, 98, 18, 20 ) , ConstantGRect( 92, 98, 18, 20 ) , ConstantGRect( 109, 98, 18, 20 ) , ConstantGRect( 126, 98, 18, 20 ) }
                                          , { ConstantGRect( 16, 98, 18, 20 ) , ConstantGRect( 35, 98, 18, 20 ) , ConstantGRect( 52, 98, 18, 20 ) , ConstantGRect( 73, 98, 18, 20 ) , ConstantGRect( 91, 98, 18, 20 ) , ConstantGRect( 109, 98, 18, 20 ) , ConstantGRect( 124, 98, 18, 20 ) }
@@ -98,7 +91,6 @@ static const GRect highlight_rect[][7] = { { ConstantGRect( 16, 98, 18, 20 ) , C
                                          , { ConstantGRect( 14, 98, 18, 20 ) , ConstantGRect( 32, 98, 18, 20 ) , ConstantGRect( 47, 98, 18, 20 ) , ConstantGRect( 63, 98, 18, 20 ) , ConstantGRect( 78, 98, 18, 20 ) , ConstantGRect( 94, 98, 18, 20 ) , ConstantGRect( 113, 98, 18, 20 ) }
                                          };
 
-
 static const GRect highlight_rect2[][7] = { { ConstantGRect( 15, 98, 18, 20 ) , ConstantGRect( 34, 98, 18, 20 ) , ConstantGRect( 54, 98, 18, 20 ) , ConstantGRect( 72, 98, 18, 20 ) , ConstantGRect( 93, 98, 18, 20 ) , ConstantGRect( 109, 98, 18, 20 ) , ConstantGRect( 126, 98, 18, 20 ) }
                                          , { ConstantGRect( 15, 98, 18, 20 ) , ConstantGRect( 32, 98, 18, 20 ) , ConstantGRect( 52, 98, 18, 20 ) , ConstantGRect( 70, 98, 18, 20 ) , ConstantGRect( 91, 98, 18, 20 ) , ConstantGRect( 109, 98, 18, 20 ) , ConstantGRect( 125, 98, 18, 20 ) }
                                          , { ConstantGRect( 16, 98, 18, 20 ) , ConstantGRect( 35, 98, 18, 20 ) , ConstantGRect( 54, 98, 18, 20 ) , ConstantGRect( 70, 98, 18, 20 ) , ConstantGRect( 89, 98, 18, 20 ) , ConstantGRect( 105, 98, 18, 20 ) , ConstantGRect( 123, 98, 18, 20 ) }
@@ -113,11 +105,8 @@ static const GRect highlight_rect2[][7] = { { ConstantGRect( 15, 98, 18, 20 ) , 
                                          , { ConstantGRect( 13, 98, 18, 20 ) , ConstantGRect( 31, 98, 18, 20 ) , ConstantGRect( 48, 98, 18, 20 ) , ConstantGRect( 66, 98, 18, 20 ) , ConstantGRect( 86, 98, 18, 20 ) , ConstantGRect( 101, 98, 18, 20 ) , ConstantGRect( 118, 98, 18, 20 ) }
                                          , { ConstantGRect( 12, 98, 18, 20 ) , ConstantGRect( 30, 98, 18, 20 ) , ConstantGRect( 49, 98, 18, 20 ) , ConstantGRect( 67, 98, 18, 20 ) , ConstantGRect( 83, 98, 18, 20 ) , ConstantGRect( 101, 98, 18, 20 ) , ConstantGRect( 120, 98, 18, 20 ) }
                                          , { ConstantGRect( 15, 98, 18, 20 ) , ConstantGRect( 34, 98, 18, 20 ) , ConstantGRect( 51, 98, 18, 20 ) , ConstantGRect( 67, 98, 18, 20 ) , ConstantGRect( 82, 98, 18, 20 ) , ConstantGRect( 97, 98, 18, 20 ) , ConstantGRect( 113, 98, 18, 20 ) }
-                                         };
-	
+                                         };	
 #endif
-
-
 
 // Month names
 static const char *month_names_arr[][12] = { { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" }
@@ -131,11 +120,10 @@ static const char *month_names_arr[][12] = { { "Jan", "Feb", "Mar", "Apr", "May"
                                            , { "Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec" }
                                            , { "Tam", "Hel", "Maa", "Huh", "Tou", "Kes", "Hei", "Elo", "Syy", "Lok", "Mar", "Jou" }
                                            , { "Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec" }
-										   , { "Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara" }
-										   , { "Gen", "Feb", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Oct", "Nov", "Des" }
-										   , { "Jan", "Feb", "Mar", "Apr", "Máj", "Jún", "Júl", "Aug", "Set", "Okt", "Nov", "Dec" }
+								                    		   , { "Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara" }
+										                       , { "Gen", "Feb", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Oct", "Nov", "Des" }
+										                       , { "Jan", "Feb", "Mar", "Apr", "Máj", "Jún", "Júl", "Aug", "Set", "Okt", "Nov", "Dec" }
                                            };
-
 
 // Format week
 static const char *week_formats[] = { "Week %V"
@@ -154,7 +142,6 @@ static const char *week_formats[] = { "Week %V"
                                     , "Týžden %V"
                                     };
 
-
 // Format date
 static const char *date_formats[] = { "%b %e"
                                     , "%e "
@@ -172,23 +159,20 @@ static const char *date_formats[] = { "%b %e"
                                     , "%e "
                                     };
 
-
 // Formats for second line
 static const char *alt_formats[] = { "Week %V"
                                    , "%Y.%j"
                                    , "%d/%m/%y"
                                    , "%m/%d/%y"
                                    , "W%V D%j"
-								   , "%Y.%m.%d"
-								   , "%d.%m.%Y"
-								   , "%y.%V.%d"
+                								   , "%Y.%m.%d"
+								                   , "%d.%m.%Y"
+								                   , "%y.%V.%d"
                                    };
-
 
 static char week_text[] = "               ";
 static char date_text[] = "               ";
 static char alt_text[]  = "               ";
-
 
 // Ordinal numbers
 static const char *ordinal_numbers[] = { "st", "nd", "rd", "th", "th", "th", "th", "th", "th", "th"
